@@ -92,7 +92,15 @@ class PostList extends Component {
   };
 
   render() {
-    return <h1>Hola!</h1>;
+    const { posts } = this.state;
+
+    return (
+      <div>
+        {posts.map(post => (
+          <PostItem key={post.id} {...post} />
+        ))}
+      </div>
+    );
   }
 }
 
